@@ -1,0 +1,5 @@
+# Nadie lee la configuración ni el modelo desde la web
+<FilesMatch "^(config|config\.ejemplo)\.php$">
+  Require all denied
+</FilesMatch>
+Options -Indexes
