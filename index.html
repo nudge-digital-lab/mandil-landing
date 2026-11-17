@@ -86,7 +86,7 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.08;letter-spacin
 .nav a{font-family:var(--head);font-size:14.5px;font-weight:600;color:#fff;text-decoration:none;opacity:.88;transition:opacity .2s,color .2s}
 .nav a:hover{opacity:1}
 .head .btn{padding:12px 22px;font-size:14px}
-.menu-btn{display:none;width:46px;height:46px;align-items:center;justify-content:center;color:#fff}
+.menu-btn{display:none;width:46px;height:46px;align-items:center;justify-content:center;color:#fff;order:3}
 .menu-btn svg{width:26px;height:26px}
 .head.solid{background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);box-shadow:0 1px 0 var(--line)}
 .head.solid .wrap{height:70px}
@@ -117,7 +117,7 @@ h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.08;letter-spacin
 .quick span{font-family:var(--head);font-size:13px;font-weight:700;color:rgba(255,255,255,.75);margin-right:4px}
 .quick button{font-family:var(--head);font-weight:600;font-size:14px;color:#fff;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);transition:background .2s,box-shadow .2s,transform .2s var(--ease)}
 .quick button:hover{background:#fff;color:var(--green-dark);transform:translateY(-2px)}
-.replay{position:absolute;z-index:2;right:28px;bottom:28px;display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-size:12.5px;font-weight:700;color:#fff;padding:9px 14px;border-radius:999px;background:rgba(10,20,14,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.85}
+.replay{position:absolute;z-index:2;right:28px;top:160px;display:inline-flex;align-items:center;gap:8px;font-family:var(--head);font-size:12.5px;font-weight:700;color:#fff;padding:9px 14px;border-radius:999px;background:rgba(10,20,14,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.85}
 .replay:hover{opacity:1}
 .replay svg{width:15px;height:15px}
 
@@ -398,7 +398,8 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
   .head .logo{height:32px;width:134px}.head .logo img{height:32px}
   .nav.open{top:64px;padding:6px 18px 20px}
   html{scroll-padding-top:70px}
-  .hero::after{background:linear-gradient(0deg,rgba(6,30,16,.95) 0%,rgba(6,30,16,.82) 45%,rgba(6,30,16,.35) 75%,rgba(6,30,16,.45) 100%)}
+  .hero::after{background:linear-gradient(0deg,rgba(6,30,16,.95) 0%,rgba(6,30,16,.86) 45%,rgba(6,30,16,.78) 80%,rgba(6,30,16,.72) 100%)}
+  .hero .kicker{color:#fff}
   .hero .wrap{padding-top:110px;padding-bottom:44px}
   .hero-tag{display:none}
   .hero h1{font-size:clamp(38px,11vw,52px)}
@@ -465,6 +466,9 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
       <img class="lg-white" src="img/logo-mandil-blanco.png" alt="Mandil Construcciones" width="900" height="215">
       <img class="lg-green" src="img/logo-mandil.png" alt="" width="900" height="215">
     </a>
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#nosotros">Nosotros</a>
       <a href="#servicios">Servicios</a>
@@ -473,9 +477,6 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
       <button type="button" class="btn btn-red nav-cta" data-pedido data-origen="Menú">Pedí tu presupuesto</button>
     </nav>
     <button type="button" class="btn btn-red btn-head" data-pedido data-origen="Encabezado">Pedí tu presupuesto</button>
-    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
   </div>
 </header>
 
@@ -534,15 +535,15 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
         <figure>
           <picture>
             <source type="image/webp" srcset="img/pared-lavanda-900.webp 900w, img/pared-lavanda.webp 1600w" sizes="(max-width:1060px) 100vw, 600px">
-            <img src="img/pared-lavanda.jpg" srcset="img/pared-lavanda-900.jpg 900w, img/pared-lavanda.jpg 1600w" sizes="(max-width:1060px) 100vw, 600px" alt="El equipo de Mandil colocando piso flotante y pintando un living" loading="lazy" width="1600" height="800">
+            <img src="img/pared-lavanda.jpg" srcset="img/pared-lavanda-900.jpg 900w, img/pared-lavanda.jpg 1600w" sizes="(max-width:1060px) 100vw, 600px" alt="Colocación de piso flotante y pintura en un living" loading="lazy" width="1600" height="800">
           </picture>
-          <figcaption>Obra en curso</figcaption>
+          <figcaption>Pintura y pisos</figcaption>
         </figure>
       </div>
       <div class="txt rv d1">
         <p>En Mandil Construcciones somos un equipo de trabajo. Cada obra la encaramos en conjunto, con comunicación clara, roles definidos y un mismo objetivo: que el resultado sea el que imaginaste.</p>
         <p>Sabemos lo que implica remodelar. Conocemos las dificultades de una obra: los imprevistos, los plazos, la convivencia con el espacio en uso y la incertidumbre de poner en manos de otro algo tan importante como tu casa o tu local. Por eso trabajamos con planificación, orden y seguimiento permanente.</p>
-        <p>Lidera el equipo Matías, Maestro Mayor de Obras recibido en Italia, que supervisa cada etapa y está atento a cada detalle. Esa es la vara con la que medimos cada terminación.</p>
+        <p>Lidera el equipo Matías, Maestro Mayor de Obras recibido en Italia, que supervisa cada etapa y está atento a cada detalle. No nos conformamos con que el trabajo quede bien porque tiene que quedar perfecto. Esa es la vara con la que medimos cada terminación.</p>
         <button type="button" class="link-cta" data-pedido data-titulo="Contanos tu obra" data-origen="Nosotros">Contanos tu obra <svg><use href="#i-arrow"/></svg></button>
       </div>
     </div>
@@ -595,7 +596,7 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
     <div class="rv">
       <span class="kicker"><span class="tri"></span>Obras</span>
       <h2 id="works-h" class="title">Antes y después.</h2>
-      <p class="intro">Pintura, retiro del piso viejo y colocación de piso flotante en un living. Deslizá para ver el cambio.</p>
+      <p class="intro">Pintura y colocación de piso flotante en un living. Deslizá para ver el cambio.</p>
     </div>
     <div class="ba rv" id="ba" style="--pos:50%">
       <picture>
@@ -614,9 +615,9 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
       <figure class="rv">
         <picture>
           <source type="image/webp" srcset="img/pared-lavanda-900.webp 900w, img/pared-lavanda.webp 1600w" sizes="(max-width:1060px) 100vw, 590px">
-          <img src="img/pared-lavanda.jpg" srcset="img/pared-lavanda-900.jpg 900w, img/pared-lavanda.jpg 1600w" sizes="(max-width:1060px) 100vw, 590px" alt="La misma obra en curso: colocación de piso y pintura" loading="lazy" width="1600" height="800">
+          <img src="img/pared-lavanda.jpg" srcset="img/pared-lavanda-900.jpg 900w, img/pared-lavanda.jpg 1600w" sizes="(max-width:1060px) 100vw, 590px" alt="Colocación de piso flotante y pintura en un living" loading="lazy" width="1600" height="800">
         </picture>
-        <figcaption>La misma obra, en curso</figcaption>
+        <figcaption>Varios rubros a la vez</figcaption>
       </figure>
       <div class="works-cta rv d1">
         <h3>¿Querés un cambio así?</h3>
@@ -753,7 +754,7 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
 <!-- Flotante y chat guiado -->
 <button type="button" class="fab" id="fab" data-chat-abrir aria-label="Pedí tu presupuesto por WhatsApp" aria-controls="chat" aria-expanded="false">
   <span class="fi"><svg><use href="#i-wa"/></svg></span><span class="dot" aria-hidden="true"></span>
-  <span>Presupuesto por WhatsApp<small>Te lo armamos en 1 minuto</small></span>
+  <span>Presupuesto por WhatsApp<small>Pedilo en 1 minuto</small></span>
 </button>
 <div class="bubble" id="bubble" hidden role="button" tabindex="0" aria-label="Abrir el chat de presupuesto">
   <b>Mandil Construcciones</b>
@@ -877,7 +878,10 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
   function cerrarPedido() { if (pd.open) { if (pd.close) pd.close(); else { pd.removeAttribute('open'); alCerrar(); } } }
   function alCerrar() { document.documentElement.style.overflow = ''; if (abiertaPor && abiertaPor.focus) abiertaPor.focus({ preventScroll: true }); }
   pd.addEventListener('close', alCerrar);
-  pd.addEventListener('click', function (e) { if (e.target === pd) cerrarPedido(); }); // clic en el fondo
+  function enFondo(e) { if (e.target !== pd) return false; var r = pd.getBoundingClientRect(); return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom; }
+  var apretoFondo = false;
+  pd.addEventListener('pointerdown', function (e) { apretoFondo = enFondo(e); });
+  pd.addEventListener('click', function (e) { if (apretoFondo && enFondo(e)) cerrarPedido(); apretoFondo = false; }); // clic en el fondo oscuro
   $$('[data-pd-cerrar]', pd).forEach(function (b) { b.addEventListener('click', cerrarPedido); });
 
   function leerForm() {
@@ -987,7 +991,10 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
     function (sig) { bot('¿Qué querés remodelar?', function () { opciones(ESPACIOS, false, function (v) { d.espacio = v; sig(); }); }); },
     function (sig) { bot('¿Qué trabajos necesitás? Podés marcar varios.', function () { opciones(TRABAJOS, true, function (v) { d.trabajos = v; sig(); }); }); },
     function (sig) { bot('¿Dónde es la obra?', function () { opciones(ZONAS, false, function (v) { d.zona = v;
-      if (v === 'Otra zona') bot('Fuera de Vicente López y San Isidro tomamos obras especiales, solo para clientes recomendados. Si te recomendaron, contanoslo por WhatsApp.', sig); else sig(); }); }); },
+      if (v !== 'Otra zona') { sig(); return; }
+      bot('Fuera de Vicente López y San Isidro tomamos obras especiales, solo para clientes recomendados. ¿En qué localidad es y quién te recomendó?', function () {
+        preguntar('Ej.: Tigre, me recomendó Ana', 'text', function (v) { return v.length < 3 ? 'Contanos la localidad, así lo vemos.' : ''; }, false, function (v) { d.mensaje = 'Otra zona: ' + v; sig(); });
+      }); }); }); },
     function (sig) { bot('¿Para cuándo la necesitás?', function () { opciones(PLAZOS, false, function (v) { d.plazo = v; sig(); }); }); },
     function (sig) { bot('Podés pagar la obra con tarjeta de crédito en cuotas sin interés. ¿Te interesa?', function () { opciones(['Sí, me interesa', 'No por ahora'], false, function (v) { d.cuotas = v === 'Sí, me interesa' ? 'Me interesa' : ''; sig(); }); }); },
     function (sig) { bot('¿Cómo te llamás?', function () { preguntar('Tu nombre', 'text', function (v) { return v.length < 2 ? 'Contanos tu nombre, así sabemos con quién hablamos.' : ''; }, false, function (v) { d.nombre = v; sig(); }); }); },
@@ -999,13 +1006,13 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
     var i = 0;
     function seguir() { progreso(i); if (i < PASOS_GUION.length) { PASOS_GUION[i++](seguir); } else cierre(); }
     bot('Hola, somos Mandil Construcciones.', function () {
-      bot('Te hago unas preguntas rápidas con botones y te armamos el pedido de presupuesto.', seguir);
+      bot('Te hacemos unas preguntas rápidas con botones y te armamos el pedido de presupuesto.', seguir);
     });
   }
   function cierre() {
     bot('Listo. Este es tu pedido:', function () {
       var r = el('div', 'resumen'), dl = el('dl');
-      [['Espacio', d.espacio], ['Trabajos', (d.trabajos || []).join(', ')], ['Zona', d.zona], ['Para cuándo', d.plazo], ['Cuotas', d.cuotas || 'No por ahora'], ['Nombre', d.nombre], ['WhatsApp', d.telefono], ['Mail', d.email]].forEach(function (p) {
+      [['Espacio', d.espacio], ['Trabajos', (d.trabajos || []).join(', ')], ['Zona', d.zona], ['Detalle', d.mensaje], ['Para cuándo', d.plazo], ['Cuotas', d.cuotas || 'No por ahora'], ['Nombre', d.nombre], ['WhatsApp', d.telefono], ['Mail', d.email]].forEach(function (p) {
         if (!p[1]) return; dl.appendChild(el('dt', '', p[0])); dl.appendChild(el('dd', '', p[1]));
       });
       r.appendChild(dl);
@@ -1043,9 +1050,10 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
 
   // Burbuja de aviso: una vez por visita, a los 8 s, si no abrió nada
   function ocultarBurbuja() { bubble.hidden = true; }
+  function flotanteOculto() { return fab.classList.contains('arriba') && matchMedia('(max-width:600px)').matches; }
   function avisar() {
     if (store('mandil_aviso') || !chat.hidden || pd.open) return;
-    if (getComputedStyle(fab).opacity === '0') { setTimeout(avisar, 3000); return; } // en el celular, espera a que aparezca el flotante
+    if (flotanteOculto()) { setTimeout(avisar, 3000); return; } // en el celular, espera a que aparezca el flotante
     bubble.hidden = false; store('mandil_aviso', '1');
   }
   setTimeout(avisar, 8000);
@@ -1094,11 +1102,13 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
     var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
     head.classList.toggle('solid', y > 40 || nav.classList.contains('open'));
     fab.classList.toggle('arriba', y < innerHeight * .55); // en el celular, el flotante aparece al dejar la portada
+    if (!bubble.hidden && flotanteOculto()) ocultarBurbuja();
     prog.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
   }
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-  function cerrarMenu() { nav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); onScroll(); }
-  mb.addEventListener('click', function () { var o = !nav.classList.contains('open'); nav.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); onScroll(); });
+  function cerrarMenu() { nav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); mb.setAttribute('aria-label', 'Abrir menú'); onScroll(); }
+  mb.addEventListener('click', function () { var o = !nav.classList.contains('open'); nav.classList.toggle('open', o); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.setAttribute('aria-label', o ? 'Cerrar menú' : 'Abrir menú'); onScroll(); if (o) nav.querySelector('a').focus(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { cerrarMenu(); mb.focus(); } });
   $$('#nav a').forEach(function (a) { a.addEventListener('click', cerrarMenu); });
 
   // ---- Aparición suave ----
