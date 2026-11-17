@@ -189,7 +189,7 @@ section{padding:120px 0}
 .svc-foot p{font-family:var(--head);font-weight:700;font-size:19px;color:var(--ink);max-width:48ch;line-height:1.35}
 
 /* Obras */
-.ba{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:2/1;user-select:none;-webkit-user-select:none;touch-action:pan-y;background:#ccc;margin-top:56px}
+.ba{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/10;user-select:none;-webkit-user-select:none;touch-action:pan-y;background:#ccc;margin-top:56px}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .ba .after{clip-path:inset(0 0 0 var(--pos,50%))}
 .ba .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
@@ -198,7 +198,19 @@ section{padding:120px 0}
 .ba .tag{position:absolute;top:20px;font-family:var(--head);font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(15,25,19,.62);padding:8px 13px;border-radius:999px;pointer-events:none}
 .ba .tag.l{left:20px}.ba .tag.r{right:20px;background:var(--green)}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-cap{margin-top:12px;font-size:14px;color:var(--muted)}
+.pares-h{margin-top:56px;font-size:clamp(22px,2.4vw,30px);font-weight:900}
+.pares{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.par .fotos{display:grid;grid-template-columns:1fr 1fr;gap:6px;border-radius:20px;overflow:hidden}
+.par .fotos>div{position:relative;aspect-ratio:3/4;background:#d9d9d4}
+.par img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.par .tag{position:absolute;top:14px;left:14px;font-family:var(--head);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(15,25,19,.62);padding:7px 11px;border-radius:999px}
+.par .tag.r{background:var(--green)}
 .works-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.works-row .mosaico{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:1fr 1fr;gap:6px;min-height:440px}
+.mosaico>div{position:relative;background:#d9d9d4}
+.mosaico>div:first-child{grid-row:span 2}
+.works-row .mosaico figcaption{max-width:calc(55% - 30px);border-radius:14px;line-height:1.35}
 .works-row figure{position:relative;border-radius:20px;overflow:hidden;min-height:300px}
 .works-row figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 50%}
 .works-row figcaption{position:absolute;left:18px;bottom:18px;font-family:var(--head);font-size:13px;font-weight:700;color:#fff;background:rgba(10,20,14,.6);padding:8px 13px;border-radius:999px}
@@ -370,6 +382,7 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
 @media (max-width:1060px){
   .about .grid,.zone .grid{grid-template-columns:1fr;gap:48px}
   .works-row{grid-template-columns:1fr}
+  .pares{gap:18px}
   .steps{grid-template-columns:1fr}
   .cuotas .wrap{grid-template-columns:auto 1fr;gap:24px 28px}
   .cuotas .btn{grid-column:1/-1;justify-self:start}
@@ -410,6 +423,9 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
   .svc-foot{padding:24px 20px}
   .ba{aspect-ratio:4/3;margin-top:40px}
   .works-row figure{min-height:240px}
+  .works-row .mosaico{min-height:380px}
+  .pares{grid-template-columns:1fr}
+  .pares-h{margin-top:44px}
   .works-cta{padding:34px 26px}
   .final{padding:100px 0}
   .final-actions .btn{flex:1 1 100%}
@@ -590,33 +606,42 @@ button.place:hover{background:#fff;color:var(--green-dark);transform:translateY(
     <div class="rv">
       <span class="kicker"><span class="tri"></span>Obras</span>
       <h2 id="works-h" class="title">Antes y después.</h2>
-      <p class="intro">Pintura y colocación de piso flotante en un living. Deslizá para ver el cambio.</p>
+      <p class="intro">Trabajos reales del equipo. Deslizá para ver el cambio.</p>
     </div>
     <div class="ba rv" id="ba" style="--pos:50%">
-      <picture>
-        <source type="image/webp" srcset="img/sala-antes-900.webp 900w, img/sala-antes.webp 1600w" sizes="(max-width:1200px) 100vw, 1144px">
-        <img src="img/sala-antes.jpg" srcset="img/sala-antes-900.jpg 900w, img/sala-antes.jpg 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Living antes de la remodelación, con paredes manchadas y piso gastado" loading="lazy" width="1600" height="800">
-      </picture>
-      <picture>
-        <source type="image/webp" srcset="img/sala-despues-900.webp 900w, img/sala-despues.webp 1600w" sizes="(max-width:1200px) 100vw, 1144px">
-        <img class="after" src="img/sala-despues.jpg" srcset="img/sala-despues-900.jpg 900w, img/sala-despues.jpg 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="El mismo living después: pared pintada y piso flotante" loading="lazy" width="1600" height="800">
-      </picture>
+      <picture><source type="image/webp" srcset="img/obra-pared-antes-900.webp 900w, img/obra-pared-antes.webp 1600w" sizes="(max-width:1200px) 100vw, 1144px"><img src="img/obra-pared-antes.jpg" srcset="img/obra-pared-antes-900.jpg 900w, img/obra-pared-antes.jpg 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="Pared de un living antes del revestimiento, lisa y con el hueco de las conexiones abierto" loading="lazy" width="1600" height="1200"></picture>
+      <picture><source type="image/webp" srcset="img/obra-pared-despues-900.webp 900w, img/obra-pared-despues.webp 1600w" sizes="(max-width:1200px) 100vw, 1144px"><img class="after" src="img/obra-pared-despues.jpg" srcset="img/obra-pared-despues-900.jpg 900w, img/obra-pared-despues.jpg 1600w" sizes="(max-width:1200px) 100vw, 1144px" alt="La misma pared después, revestida de punta a punta" loading="lazy" width="1600" height="1200"></picture>
       <span class="tag l">Antes</span><span class="tag r">Después</span>
       <div class="handle"><div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></div></div>
       <input type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
     </div>
+    <p class="ba-cap rv">Revestimiento de una pared en un living.</p>
+    <h3 class="pares-h rv">Colocación de pisos</h3>
+    <div class="pares">
+      <figure class="par rv">
+        <div class="fotos">
+          <div><picture><source type="image/webp" srcset="img/obra-piso1-antes-600.webp 600w, img/obra-piso1-antes.webp 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px"><img src="img/obra-piso1-antes.jpg" srcset="img/obra-piso1-antes-600.jpg 600w, img/obra-piso1-antes.jpg 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px" alt="Ambiente con el contrapiso a la vista, antes de colocar el piso" loading="lazy" width="1200" height="1600"></picture><span class="tag">Antes</span></div>
+          <div><picture><source type="image/webp" srcset="img/obra-piso1-despues-600.webp 600w, img/obra-piso1-despues.webp 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px"><img src="img/obra-piso1-despues.jpg" srcset="img/obra-piso1-despues-600.jpg 600w, img/obra-piso1-despues.jpg 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px" alt="El mismo ambiente con el piso nuevo colocado" loading="lazy" width="1200" height="1600"></picture><span class="tag r">Después</span></div>
+        </div>
+      </figure>
+      <figure class="par rv d1">
+        <div class="fotos">
+          <div><picture><source type="image/webp" srcset="img/obra-piso2-antes-600.webp 600w, img/obra-piso2-antes.webp 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px"><img src="img/obra-piso2-antes.jpg" srcset="img/obra-piso2-antes-600.jpg 600w, img/obra-piso2-antes.jpg 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px" alt="Ambiente sin piso, con restos de pegamento sobre la carpeta" loading="lazy" width="1200" height="1600"></picture><span class="tag">Antes</span></div>
+          <div><picture><source type="image/webp" srcset="img/obra-piso2-despues-600.webp 600w, img/obra-piso2-despues.webp 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px"><img src="img/obra-piso2-despues.jpg" srcset="img/obra-piso2-despues-600.jpg 600w, img/obra-piso2-despues.jpg 1200w" sizes="(max-width:600px) 46vw, (max-width:1200px) 24vw, 280px" alt="El mismo ambiente con piso nuevo gris claro" loading="lazy" width="1200" height="1600"></picture><span class="tag r">Después</span></div>
+        </div>
+      </figure>
+    </div>
     <div class="works-row">
-      <figure class="rv">
-        <picture>
-          <source type="image/webp" srcset="img/pared-lavanda-900.webp 900w, img/pared-lavanda.webp 1600w" sizes="(max-width:1060px) 100vw, 590px">
-          <img src="img/pared-lavanda.jpg" srcset="img/pared-lavanda-900.jpg 900w, img/pared-lavanda.jpg 1600w" sizes="(max-width:1060px) 100vw, 590px" alt="Colocación de piso flotante y pintura en un living" loading="lazy" width="1600" height="800">
-        </picture>
-        <figcaption>Varios rubros a la vez</figcaption>
+      <figure class="mosaico rv">
+        <div><picture><source type="image/webp" srcset="img/obra-local-600.webp 600w, img/obra-local.webp 960w" sizes="(max-width:1060px) 56vw, 330px"><img src="img/obra-local.jpg" srcset="img/obra-local-600.jpg 600w, img/obra-local.jpg 960w" sizes="(max-width:1060px) 56vw, 330px" alt="Local comercial durante la colocación del piso nuevo sobre las baldosas" loading="lazy" width="960" height="1280"></picture></div>
+        <div><picture><source type="image/webp" srcset="img/obra-plomeria-480.webp 480w, img/obra-plomeria.webp 720w" sizes="(max-width:1060px) 44vw, 260px"><img src="img/obra-plomeria.jpg" srcset="img/obra-plomeria-480.jpg 480w, img/obra-plomeria.jpg 720w" sizes="(max-width:1060px) 44vw, 260px" alt="Cañerías nuevas durante una obra de plomería" loading="lazy" width="720" height="1280"></picture></div>
+        <div><picture><source type="image/webp" srcset="img/obra-camara-600.webp 600w, img/obra-camara.webp 960w" sizes="(max-width:1060px) 44vw, 260px"><img src="img/obra-camara.jpg" srcset="img/obra-camara-600.jpg 600w, img/obra-camara.jpg 960w" sizes="(max-width:1060px) 44vw, 260px" alt="Cámara de ladrillo con la cañería nueva" loading="lazy" width="960" height="1280"></picture></div>
+        <figcaption>En obra: pisos, plomería y albañilería</figcaption>
       </figure>
       <div class="works-cta rv d1">
         <h3>¿Querés un cambio así?</h3>
         <p>Contanos qué querés hacer y te pasamos el presupuesto, con la opción de pagar en cuotas sin interés.</p>
-        <button type="button" class="btn btn-red" data-pedido data-trabajos="Pintura|Pisos flotantes" data-titulo="Quiero un cambio así" data-origen="Antes y después">Pedí tu presupuesto <svg><use href="#i-arrow"/></svg></button>
+        <button type="button" class="btn btn-red" data-pedido data-titulo="Quiero un cambio así" data-origen="Obras">Pedí tu presupuesto <svg><use href="#i-arrow"/></svg></button>
       </div>
     </div>
   </div>
